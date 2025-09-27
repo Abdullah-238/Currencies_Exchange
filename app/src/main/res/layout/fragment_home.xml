@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/lbl_ConvertedAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:contentDescription="Converted amount result"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Amount Label -->
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Enter the amount:"
+        android:labelFor="@id/txtAmount"
+        app:layout_constraintTop_toBottomOf="@id/lbl_ConvertedAmount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Amount Input -->
+    <EditText
+        android:id="@+id/txtAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:inputType="numberDecimal"
+        android:hint="Enter amount"
+        android:importantForAutofill="no"
+        android:contentDescription="Amount input field"
+        app:layout_constraintTop_toBottomOf="@id/lblTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="From"
+        android:labelFor="@id/spCurrenciesFrom"
+        app:layout_constraintTop_toBottomOf="@id/txtAmount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spCurrenciesFrom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Select source currency"
+        app:layout_constraintTop_toBottomOf="@id/lblFrom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="To"
+        android:labelFor="@id/spCurrenciesTo"
+        app:layout_constraintTop_toBottomOf="@id/spCurrenciesFrom"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spCurrenciesTo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Select target currency"
+        app:layout_constraintTop_toBottomOf="@id/lblTo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Convert Button -->
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Convert"
+        android:contentDescription="Convert amount"
+        app:layout_constraintTop_toBottomOf="@id/spCurrenciesTo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
